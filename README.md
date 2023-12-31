@@ -1,3 +1,5 @@
+Документация: https://v3.ru.vuejs.org/ru/guide/installation.html#npm https://vuejs.org/guide/quick-start.html
+
 # deliveryVueJS
 
 This template should help get you started developing with Vue 3 in Vite.
