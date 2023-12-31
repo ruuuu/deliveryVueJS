@@ -1,15 +1,11 @@
-<script>
-
-</script>
-
 
 <template>
  <!-- модалка: -->
-    <div class="cart-modal__overlay">
+    <div class="cart-modal__overlay"  :class="{open: isOpen}"  @click.self="closeModal()"><!-- добавится наш класс "open", если isOpen=true. click.self будет отслушивать клик только на этот элемент(а не во вложенные) -->
       <div class="cart-modal">
           <div class="cart-modal__header">
             <h2 class="cart-modal__header-title">Корзина</h2>
-            <span class="cart-modal__header-close">
+            <span class="cart-modal__header-close" @click="closeModal()"> <!-- повесили обработчик событя на кнопку, по нажатию вызовется closeModal() -->
               <img src="../assets/img/icons/close.svg" alt="Кнопка закрытия" />
             </span>
           </div>
@@ -66,6 +62,20 @@
       </div>
     </div>
 </template>
+
+
+
+<script setup>
+  //props
+  const { isOpen } = defineProps({isOpen: Boolean});  // деструктурируем ответ
+
+  const emit = defineEmits(['toggleModal']) // придумали объекту название toggleModal
+
+  const closeModal = () => {
+    emit('toggleModal');  // сообщаем App.vue что отрабоало  событие изменеия toggleModal
+  } 
+
+</script>
 
 
 

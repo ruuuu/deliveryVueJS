@@ -1,7 +1,3 @@
-<script>
-
-</script>
-
 
 <template>
  <!-- компонет Header: -->
@@ -18,7 +14,7 @@
               Войти
             </button>
 
-            <button class="btn btn-outline" id="cart-button">
+            <button class="btn btn-outline" @click="openModal()" > <!-- повесили обработчик событя на кнопку, по нажатию вызовется openModal() -->
               <img src="../assets/img/icons/shopping-cart.svg" alt="Корзина" />
               В корзину
             </button>
@@ -29,7 +25,18 @@
 </template>
 
 
-<style scoped> /* scoped нужен  чтобы др компоненты с таким же классами не подтягивали стили отсюда, то есть то  ИНКАПСУЛЯЦИЯ */
+<script setup>
+  const emit = defineEmits(['toggleModal']) // придумали объекту название toggleModal
+
+  const openModal = () => {
+    emit('toggleModal');  // сообщаем App.vue что отрабоало  событие изменеия toggleModal
+  }
+
+</script>
+
+
+// scoped нужен  чтобы др компоненты с таким же классами не подтягивали стили отсюда, то есть то  ИНКАПСУЛЯЦИЯ: 
+<style scoped>  
 
   .header {
     min-height: 124px;

@@ -1,7 +1,3 @@
-<script>
-   
-</script>
-
 
 <template>
    <footer class="footer">
@@ -43,6 +39,11 @@
       </div>
    </footer>
 </template>
+
+
+<script setup>
+   
+</script>
 
 
 <style scoped> /* scoped нужен  чтобы др компоненты с таким же классами не подтягивали стили отсюда, то есть то  ИНКАПСУЛЯЦИЯ */

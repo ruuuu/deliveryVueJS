@@ -1,7 +1,3 @@
-<script setup>
-  
-</script>
-
 
 <template>
   <section class="products">
@@ -171,6 +167,14 @@
             </div>
          </section>
 </template>
+
+
+
+
+<script setup>
+  
+</script>
+
 
 <style scoped>
 
